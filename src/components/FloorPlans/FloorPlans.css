@@ -83,6 +83,7 @@
   border-radius: 15px;
   border: 2px solid #d2a679;
   cursor: pointer;
+ 
 }
 
 .floor-plan-image img {
@@ -92,6 +93,7 @@
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+   filter: blur(3px);
 }
 
 .floor-plan-image:hover img {
