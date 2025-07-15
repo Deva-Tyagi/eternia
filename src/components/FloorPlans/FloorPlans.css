@@ -1,0 +1,242 @@
+
+.floor-plans-section {
+  background: linear-gradient(135deg, #f4e4d4, #d2a679);
+  padding: 20px 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"%3E%3Ccircle cx="50" cy="50" r="40" fill="none" stroke="%23d2a679" stroke-width="2"/%3E%3C/svg%3E');
+  background-size: 200px 200px;
+}
+
+.floor-plans-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+  z-index: 0;
+}
+
+.floor-plans-container {
+  max-width: 1300px;
+  width: 90%;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 40px;
+  margin-top: 50px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(210, 166, 121, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.floor-plans-title {
+  font-size: 1.1rem;
+  color: #8b4513;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(139, 69, 19, 0.3);
+}
+
+.floor-plans-title span {
+  color: #d2691e;
+  font-style: italic;
+}
+
+.floor-plans-subtitle {
+  font-size: 2.5rem;
+  color: #d2691e;
+  font-weight: 800;
+  margin-bottom: 40px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #d2691e, #a0522d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.floor-plans-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.floor-plan-image {
+  flex: 2;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 2px solid #d2a679;
+}
+
+.floor-plan-image img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.floor-plan-image:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.plan-details {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.floor-plan-image:hover .plan-details {
+  transform: translateY(-10px);
+}
+
+.plan-details h3 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #ffd700;
+}
+
+.plan-details p {
+  font-size: 1.1rem;
+  margin: 8px 0 0;
+  color: #f0e68c;
+}
+
+.plan-navigation {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nav-button {
+  background: linear-gradient(45deg, #d2691e, #a0522d);
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.nav-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.nav-button:hover {
+  background: linear-gradient(45deg, #a0522d, #8b4513);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.nav-button.active {
+  background: linear-gradient(45deg, #8b4513, #5c4033);
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4);
+}
+
+.nav-button .button-icon {
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .floor-plans-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .floor-plan-image img {
+    height: 350px;
+  }
+
+  .plan-navigation {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-button {
+    width: 45%;
+    margin: 10px;
+  }
+
+  .floor-plans-subtitle {
+    font-size: 2.5rem;
+  }
+
+  .floor-plans-container {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-button {
+    width: 100%;
+  }
+
+  .floor-plan-image img {
+    height: 300px;
+  }
+
+  .floor-plans-subtitle {
+    font-size: 2rem;
+  }
+
+  .floor-plans-title {
+    font-size: 1.5rem;
+  }
+
+  .plan-details h3 {
+    font-size: 1.5rem;
+  }
+
+  .plan-details p {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,262 @@
+.dc-disclaimer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.dc-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.dc-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dc-header p {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.dc-sections-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.dc-section-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #e8f4f8;
+}
+
+.dc-section-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.dc-section-header {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.dc-section-header:hover {
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+}
+
+.dc-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.dc-section-icon {
+  width: 24px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  padding: 0.25rem;
+}
+
+.dc-expand-icon {
+  transition: transform 0.3s ease;
+}
+
+.dc-expand-icon.dc-expanded {
+  transform: rotate(180deg);
+}
+
+.dc-section-content {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.dc-section-content.dc-expanded {
+  max-height: 1000px;
+  padding: 1.5rem;
+}
+
+.dc-content-text {
+  line-height: 1.8;
+  color: #4a5568;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.dc-content-text:last-child {
+  margin-bottom: 0;
+}
+
+.dc-content-heading {
+  color: #2c3e50;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.dc-highlight {
+  background: linear-gradient(120deg, #ffeaa7 0%, #fab1a0 100%);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #2d3436;
+}
+
+.dc-warning-box {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+  border: 1px solid #fda4af;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.dc-warning-icon {
+  color: #dc2626;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.dc-info-box {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  border: 1px solid #7dd3fc;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.dc-info-icon {
+  color: #0369a1;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.dc-footer {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 15px;
+  margin-top: 2rem;
+}
+
+.dc-footer h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.dc-footer p {
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.dc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dc-disclaimer-container {
+    padding: 1rem;
+  }
+
+  .dc-header h1 {
+    font-size: 2rem;
+  }
+
+  .dc-header p {
+    font-size: 1rem;
+  }
+
+  .dc-section-header {
+    padding: 1rem;
+  }
+
+  .dc-section-content.dc-expanded {
+    padding: 1rem;
+  }
+
+  .dc-section-title {
+    font-size: 1.1rem;
+  }
+
+  .dc-footer {
+    padding: 1.5rem;
+  }
+
+  .dc-footer h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dc-disclaimer-container {
+    padding: 0.75rem;
+  }
+
+  .dc-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .dc-section-header {
+    padding: 0.75rem;
+  }
+
+  .dc-section-content.dc-expanded {
+    padding: 0.75rem;
+  }
+
+  .dc-warning-box,
+  .dc-info-box {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .dc-badge {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}

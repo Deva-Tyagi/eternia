@@ -1,0 +1,365 @@
+/* Base Styles */
+.pricing-section {
+  background: #f8f5f2;
+  padding: 4rem 1rem;
+  color: #333;
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.badge {
+  display: inline-block;
+  background: #a67c52;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.section-header h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0;
+  color: #2c3e50;
+}
+
+/* Pricing Cards */
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.pricing-card {
+  background: white;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.pricing-card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card.popular {
+  border: 2px solid #a67c52;
+}
+
+.popular-badge {
+  position: absolute;
+  top: 1rem;
+  right: -2.5rem;
+  background: #a67c52;
+  color: white;
+  padding: 0.3rem 2.5rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+.card-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.area {
+  color: #7f8c8d;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.price {
+  margin-bottom: 1.5rem;
+}
+
+.price .amount {
+  font-size: 1.8rem;
+  font-weight: 800;
+  display: block;
+  color: #a67c52;
+}
+
+.price .note {
+  font-size: 0.8rem;
+  color: #95a5a6;
+}
+
+.interest-btn {
+  background: #a67c52;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 0.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 200px;
+}
+
+.interest-btn:hover {
+  background: #8c6844;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(166, 124, 82, 0.3);
+}
+
+.offer-note {
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  padding: 1rem;
+  background: rgba(166, 124, 82, 0.1);
+  border-radius: 0.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #a67c52;
+}
+
+/* Enhanced Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  width: 50%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #333;
+  background: #f5f5f5;
+}
+
+.form-header {
+  text-align: center;
+  padding: 30px 30px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.form-header h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 8px 0;
+}
+
+.form-header p {
+  color: #7f8c8d;
+  font-size: 14px;
+  margin: 0;
+}
+
+.selected-plan {
+  margin: 20px 30px;
+  padding: 15px;
+  background: #f8f5f2;
+  border-radius: 8px;
+  border-left: 4px solid #a67c52;
+}
+
+.plan-summary {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.plan-price-tag {
+  font-size: 14px;
+  color: #555;
+}
+
+.contact-form {
+  padding: 20px 30px 30px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-row {
+  display: flex;
+  gap: 15px;
+}
+
+.input-row .input-group {
+  flex: 1;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  outline: none;
+  border-color: #a67c52;
+}
+
+.input-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.submit-button {
+  width: 100%;
+  background: #a67c52;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.submit-button:hover:not(:disabled) {
+  background: #8c6844;
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .pricing-cards {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto 2rem;
+  }
+  
+  .offer-note {
+    font-size: 0.9rem;
+  }
+
+  .modal-content {
+    width: 95%;
+    margin: 20px;
+  }
+
+  .form-header {
+    padding: 25px 25px 15px;
+  }
+
+  .form-header h3 {
+    font-size: 20px;
+  }
+
+  .contact-form {
+    padding: 15px 25px 25px;
+  }
+
+  .input-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .selected-plan {
+    margin: 15px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .form-header {
+    padding: 20px 20px 15px;
+  }
+
+  .form-header h3 {
+    font-size: 18px;
+  }
+
+  .contact-form {
+    padding: 15px 20px 20px;
+  }
+
+  .selected-plan {
+    margin: 15px 20px;
+  }
+}
