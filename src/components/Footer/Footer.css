@@ -124,7 +124,7 @@
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-.company-logo {
+.company-logo-container {
   display: flex;
   align-items: center;
   gap: 20px;

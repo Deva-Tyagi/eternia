@@ -304,9 +304,31 @@
   animation: fadeIn 0.4s ease;
 }
 
+/* Auto-popup specific styles */
+.eternia-auto-popup {
+  background: rgba(10, 25, 47, 0.95);
+  backdrop-filter: blur(10px);
+  animation: fadeInBounce 0.6s ease;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes fadeInBounce {
+  0% { 
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% { 
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+  100% { 
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .eternia-modal {
@@ -320,9 +342,31 @@
   color: #0a192f;
 }
 
+.eternia-auto-popup-modal {
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+  border: 2px solid #d4af37;
+  box-shadow: 0 25px 60px rgba(212, 175, 55, 0.3);
+  animation: slideUpBounce 0.6s ease;
+}
+
 @keyframes slideUp {
   from { transform: translateY(50px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUpBounce {
+  0% { 
+    transform: translateY(100px) scale(0.8); 
+    opacity: 0; 
+  }
+  50% { 
+    transform: translateY(-10px) scale(1.02); 
+    opacity: 0.8; 
+  }
+  100% { 
+    transform: translateY(0) scale(1); 
+    opacity: 1; 
+  }
 }
 
 .eternia-modal-header {
@@ -334,11 +378,21 @@
   border-bottom: 1px solid rgba(10, 25, 47, 0.1);
 }
 
+.eternia-auto-popup-modal .eternia-modal-header {
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
 .eternia-modal-header h3 {
   font-size: 1.5rem;
   font-weight: 500;
   margin: 0;
   color: #0a192f;
+}
+
+.eternia-auto-popup-modal .eternia-modal-header h3 {
+  color: #d4af37;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(212, 175, 55, 0.2);
 }
 
 .eternia-close-btn {
@@ -352,6 +406,21 @@
 
 .eternia-close-btn:hover {
   opacity: 1;
+}
+
+.eternia-auto-popup-content {
+  margin-bottom: 1.5rem;
+}
+
+.eternia-popup-message {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #0a192f;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 8px;
+  border-left: 4px solid #d4af37;
 }
 
 .eternia-form {
@@ -373,6 +442,12 @@
   font-size: 0.9rem;
   transition: all 0.3s ease;
   background: rgba(10, 25, 47, 0.03);
+}
+
+.eternia-auto-popup-modal .eternia-form-group input,
+.eternia-auto-popup-modal .eternia-form-group textarea {
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: rgba(212, 175, 55, 0.05);
 }
 
 .eternia-form-group input:focus,
@@ -402,10 +477,25 @@
   margin-top: 1rem;
 }
 
+.eternia-popup-submit {
+  background: linear-gradient(135deg, #d4af37 0%, #c5a235 100%);
+  font-size: 1rem;
+  padding: 1.2rem;
+  border-radius: 8px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
 .eternia-submit-btn:hover:not(:disabled) {
   background: #c5a235;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.eternia-popup-submit:hover:not(:disabled) {
+  background: linear-gradient(135deg, #c5a235 0%, #b8942e 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
 }
 
 .eternia-submit-btn:disabled {
@@ -472,6 +562,11 @@
   .eternia-modal {
     padding: 2rem 1.5rem;
   }
+  
+  .eternia-auto-popup-modal {
+    margin: 1rem;
+    width: calc(100% - 2rem);
+  }
 }
 
 @media (max-width: 480px) {
@@ -496,5 +591,17 @@
 
   .eternia-features {
     grid-template-columns: 1fr;
+  }
+  
+  .eternia-modal {
+    padding: 1.5rem 1rem;
+  }
+  
+  .eternia-auto-popup-modal .eternia-modal-header h3 {
+    font-size: 1.2rem;
+  }
+  
+  .eternia-popup-message {
+    font-size: 0.9rem;
   }
 }

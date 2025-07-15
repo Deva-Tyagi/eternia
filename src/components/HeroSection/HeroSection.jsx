@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Phone, Download, X, MapPin } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import logo from '../../assets/images/eternia_dark.png'
@@ -6,6 +6,7 @@ import './HeroSection.css';
 
 const HeroSection = () => {
   const [showForm, setShowForm] = useState(false);
+  const [showAutoPopup, setShowAutoPopup] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,6 +15,15 @@ const HeroSection = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
+
+  // Auto-popup effect
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowAutoPopup(true);
+    }, 4000); 
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -43,6 +53,7 @@ const HeroSection = () => {
       setFormData({ name: '', email: '', mobile: '', message: '' });
       setTimeout(() => {
         setShowForm(false);
+        setShowAutoPopup(false);
         setSubmitStatus('');
       }, 2000);
     } catch (error) {
@@ -50,6 +61,11 @@ const HeroSection = () => {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const closePopup = () => {
+    setShowForm(false);
+    setShowAutoPopup(false);
   };
 
   const phoneNumber = "+919278883232";
@@ -68,7 +84,6 @@ const HeroSection = () => {
         {/* Header */}
         <div className="eternia-header">
           <div className="eternia-logo">
-            {/* <span className="eternia-logo-text">Eternia</span> */}
             <img src={logo} alt="" />
           </div>
           
@@ -151,7 +166,6 @@ const HeroSection = () => {
         </a>
       </div>
 
-      {/* Enquiry Form Modal */}
       {showForm && (
         <div className="eternia-modal-overlay">
           <div className="eternia-modal">
@@ -159,7 +173,7 @@ const HeroSection = () => {
               <h3>ENQUIRE NOW</h3>
               <button 
                 className="eternia-close-btn"
-                onClick={() => setShowForm(false)}
+                onClick={closePopup}
               >
                 <X size={20} />
               </button>
@@ -224,6 +238,90 @@ const HeroSection = () => {
                 <p className="eternia-error-message">Please try again. An error occurred.</p>
               )}
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* Auto-Popup Form Modal */}
+      {showAutoPopup && (
+        <div className="eternia-modal-overlay eternia-auto-popup">
+          <div className="eternia-modal eternia-auto-popup-modal">
+            <div className="eternia-modal-header">
+              <h3>🎉 SPECIAL OFFER - DON'T MISS OUT!</h3>
+              <button 
+                className="eternia-close-btn"
+                onClick={closePopup}
+              >
+                <X size={20} />
+              </button>
+            </div>
+            
+            <div className="eternia-auto-popup-content">
+              <p className="eternia-popup-message">
+                Get exclusive pricing details and floor plans for Eternia's luxury residences. 
+                Limited time offer - Save up to ₹40.52 Lakhs!
+              </p>
+              
+              <form onSubmit={handleSubmit} className="eternia-form">
+                <div className="eternia-form-group">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Full Name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+                
+                <div className="eternia-form-group">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email Address"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+                
+                <div className="eternia-form-group">
+                  <input
+                    type="tel"
+                    name="mobile"
+                    placeholder="Mobile Number"
+                    value={formData.mobile}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+                
+                <div className="eternia-form-group">
+                  <textarea
+                    name="message"
+                    placeholder="Your Message (Optional)"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    rows="3"
+                  ></textarea>
+                </div>
+                
+                <button 
+                  type="submit"
+                  className="eternia-submit-btn eternia-popup-submit"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'SUBMITTING...' : 'GET EXCLUSIVE DETAILS'}
+                </button>
+                
+                {submitStatus === 'success' && (
+                  <p className="eternia-success-message">Thank you! We'll contact you shortly.</p>
+                )}
+                {submitStatus === 'error' && (
+                  <p className="eternia-error-message">Please try again. An error occurred.</p>
+                )}
+              </form>
+            </div>
           </div>
         </div>
       )}
