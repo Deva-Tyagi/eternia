@@ -262,7 +262,7 @@ const HeroSection = () => {
         <div className="eternia-modal-overlay eternia-auto-popup">
           <div className="eternia-modal eternia-auto-popup-modal">
             <div className="eternia-modal-header">
-              <h3>🎉 SPECIAL OFFER - DON'T MISS OUT!</h3>
+              <h3>🏡 Why Wait to Upgrade? Discover Luxury You Deserve.</h3>
               <button 
                 className="eternia-close-btn"
                 onClick={closePopup}
@@ -273,8 +273,7 @@ const HeroSection = () => {
             
             <div className="eternia-auto-popup-content">
               <p className="eternia-popup-message">
-                Get exclusive pricing details and floor plans for Eternia's luxury residences. 
-                Limited time offer - Save up to ₹40.52 Lakhs!
+               Get Exclusive Pricing Details And Floor Plans For Eternia's Luxury Residences. Limited Time Offer - Save Up To ₹40.52 Lakhs!
               </p>
               
               <form onSubmit={handleSubmit} className="eternia-form">
