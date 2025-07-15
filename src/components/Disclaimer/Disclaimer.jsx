@@ -30,24 +30,24 @@ const Disclaimer = () => {
           </div>
           <div className={`dc-section-content ${expandedSection === 'disclaimer' ? 'dc-expanded' : ''}`}>
             <p className="dc-content-text">
-              This website is solely for providing <span className="dc-highlight">informational purposes</span> regarding real estate projects in different regions. By accessing this website, you confirm that the information including brochures and marketing materials is for informational purposes only.
+              This website is only for the purpose of providing <span className="dc-highlight">information regarding real estate projects</span> in different regions. By accessing this website, the viewer confirms that the information including brochures and marketing collaterals on this website is solely for informational purposes and the viewer has not relied on this information for making any booking/purchase in any project of the company.
             </p>
             
             <div className="dc-warning-box">
               <AlertTriangle className="dc-warning-icon" size={20} />
               <div>
-                <strong>Important:</strong> Nothing on this website constitutes advertising, marketing, booking, selling, or an offer for sale, or invitation to purchase any real estate project. The company is not liable for any consequences of actions taken by viewers relying on such material.
+                <strong>Important:</strong> Nothing on this website constitutes advertising, marketing, booking, selling or an offer for sale, or invitation to purchase a unit in any project by the company. The company is not liable for any consequence of any action taken by the viewer relying on such material/ information on this website.
               </div>
             </div>
 
             <p className="dc-content-text">
-              Please note that the company has <span className="dc-highlight">not verified the information and compliances</span> of the projects. We have not checked the RERA (Real Estate Regulation Act 2016) registration status of the listed projects. You should verify RERA registration status before making any property purchase decisions.
+              Please also note that the company has <span className="dc-highlight">not verified the information and the compliances</span> of the projects. Further, the company has not checked the RERA (Real Estate Regulation Act 2016) registration status of the real estate projects listed herein. The company does not make any representation in regards to the compliances done against these projects. You should make yourself aware about the RERA registration status of the listed real estate projects before purchasing property.
             </p>
 
             <div className="dc-info-box">
               <Info className="dc-info-icon" size={20} />
               <div>
-                <strong>Remember:</strong> This site is for information purposes only and should not be treated as the official website.
+                <strong>Remember:</strong> This site is for information purpose only and should not be treated as the official website.
               </div>
             </div>
           </div>
@@ -66,25 +66,18 @@ const Disclaimer = () => {
           </div>
           <div className={`dc-section-content ${expandedSection === 'privacy' ? 'dc-expanded' : ''}`}>
             <p className="dc-content-text">
-              In our commitment to <span className="dc-highlight">protecting your personal information</span>, we have designed this comprehensive privacy policy to keep your interests and information safe on our website.
+              In our endeavor and commitment of <span className="dc-highlight">protecting your personal information</span>, we have designed this comprehensive privacy policy. This is to keep your interests and information safe on our website.
             </p>
 
-            <h4 className="dc-content-heading">Policy Updates</h4>
+            <h4 className="dc-content-heading">Updation of privacy policy</h4>
             <p className="dc-content-text">
-              This privacy policy may undergo changes and reviews without prior notice. Please keep visiting and reviewing the terms and conditions to stay updated on any modifications.
+              This privacy policy is subject to undergo change and review without any prior notice or approval. So to keep yourself updated on the changes introduced, please keep visiting and reviewing the terms and conditions of this privacy policy.
             </p>
 
-            <h4 className="dc-content-heading">User Information</h4>
+            <h4 className="dc-content-heading">User information</h4>
             <p className="dc-content-text">
-              By using our website, you consent to the collection and use of information you provide. We may collect personal information such as name, email address, and phone number to provide relevant services and acknowledge receipt of communications.
+              By using our website, you agree to abide by the rules laid out by us and consent to collection and use of all such information that you may furnish to, or through, our website. In some cases, while you visit our website, you may not need to provide any personal information. But in certain instances, we must have your personal information in order for us to grant you access to some of the links or sites. Such links/ pages may ask for your name, e-mail address, phone number etc. The information furnished by you is used to provide relevant products and services and to acknowledge receipt of your communication or to send out information and updates to you. You have option of requesting removal from our mailing list. We do not give away your personal information to any third party.
             </p>
-
-            <div className="dc-info-box">
-              <Shield className="dc-info-icon" size={20} />
-              <div>
-                <strong>Your Rights:</strong> You have the option to request removal from our mailing list. We do not share your personal information with third parties.
-              </div>
-            </div>
           </div>
         </div>
 
@@ -101,18 +94,18 @@ const Disclaimer = () => {
           </div>
           <div className={`dc-section-content ${expandedSection === 'security' ? 'dc-expanded' : ''}`}>
             <p className="dc-content-text">
-              To ensure security while transferring sensitive information, all transmissions between client and server are <span className="dc-highlight">encrypted using advanced protocols</span>. We maintain restricted access by employees and hold them to high levels of confidentiality.
+              To ensure security while transferring sensitive information, all the ongoing transmissions between client and server are <span className="dc-highlight">encrypted using advanced and standard protocols</span>. We also practice restricted access by employees and hold them to high levels of confidentiality.
             </p>
 
-            <h4 className="dc-content-heading">Cookie Usage</h4>
+            <h4 className="dc-content-heading">Use of cookies</h4>
             <p className="dc-content-text">
-              We may use cookies for security, session continuity, and customization purposes. Users who opt to reject cookies may not be able to access some limited services or features of the site.
+              We may use cookies for security, session continuity, and customization purposes. In case of a user opting to reject a cookie, he/ she may not be able to gain access to some of the limited services or use some features of the site.
             </p>
 
             <div className="dc-warning-box">
               <AlertTriangle className="dc-warning-icon" size={20} />
               <div>
-                <strong>Contact Us:</strong> For any queries or suggestions regarding our privacy statement or your dealings with this website, please don't hesitate to contact us.
+                <strong>Contact Us:</strong> In case of any queries or suggestions regarding privacy statement or your dealings with this web site, please contact.
               </div>
             </div>
           </div>

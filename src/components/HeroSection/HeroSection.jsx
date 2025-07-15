@@ -20,7 +20,7 @@ const HeroSection = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowAutoPopup(true);
-    }, 4000); 
+    }, 6000); 
 
     return () => clearTimeout(timer);
   }, []);
@@ -127,23 +127,38 @@ const HeroSection = () => {
 
             <div className="eternia-features">
               <div className="eternia-feature-item">
-                <div className="eternia-feature-title">1 Car</div>
+                <div className="eternia-feature-title">
+                  <span style={{ color: '#4CAF50', fontWeight: 'bold', fontSize: '1.1rem', marginRight: '8px' }}>FREE</span>
+                  1 Car
+                </div>
                 <div className="eternia-feature-subtitle">Parking</div>
               </div>
               <div className="eternia-feature-item">
-                <div className="eternia-feature-title">Club</div>
+                <div className="eternia-feature-title">
+                  <span style={{ color: '#4CAF50', fontWeight: 'bold', fontSize: '1.1rem', marginRight: '8px' }}>FREE</span>
+                  Club
+                </div>
                 <div className="eternia-feature-subtitle">Membership</div>
               </div>
               <div className="eternia-feature-item">
-                <div className="eternia-feature-title">Power</div>
+                <div className="eternia-feature-title">
+                  <span style={{ color: '#4CAF50', fontWeight: 'bold', fontSize: '1.1rem', marginRight: '8px' }}>FREE</span>
+                  Power
+                </div>
                 <div className="eternia-feature-subtitle">Backup</div>
               </div>
               <div className="eternia-feature-item">
-                <div className="eternia-feature-title">Electricity</div>
+                <div className="eternia-feature-title">
+                  <span style={{ color: '#4CAF50', fontWeight: 'bold', fontSize: '1.1rem', marginRight: '8px' }}>FREE</span>
+                  Electricity
+                </div>
                 <div className="eternia-feature-subtitle">Infrastructure Charges</div>
               </div>
               <div className="eternia-feature-item">
-                <div className="eternia-feature-title">2 Year</div>
+                <div className="eternia-feature-title">
+                  <span style={{ color: '#4CAF50', fontWeight: 'bold', fontSize: '1.1rem', marginRight: '8px' }}>FREE</span>
+                  2 Year
+                </div>
                 <div className="eternia-feature-subtitle">Maintenance</div>
               </div>
             </div>
@@ -213,7 +228,7 @@ const HeroSection = () => {
                 />
               </div>
               
-              <div className="eternia-form-group">
+              {/* <div className="eternia-form-group">
                 <textarea
                   name="message"
                   placeholder="Your Message (Optional)"
@@ -221,7 +236,7 @@ const HeroSection = () => {
                   onChange={handleInputChange}
                   rows="3"
                 ></textarea>
-              </div>
+              </div> */}
               
               <button 
                 type="submit"
@@ -296,7 +311,7 @@ const HeroSection = () => {
                   />
                 </div>
                 
-                <div className="eternia-form-group">
+                {/* <div className="eternia-form-group">
                   <textarea
                     name="message"
                     placeholder="Your Message (Optional)"
@@ -304,7 +319,7 @@ const HeroSection = () => {
                     onChange={handleInputChange}
                     rows="3"
                   ></textarea>
-                </div>
+                </div> */}
                 
                 <button 
                   type="submit"

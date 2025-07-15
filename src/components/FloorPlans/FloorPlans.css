@@ -1,4 +1,3 @@
-
 .floor-plans-section {
   background: linear-gradient(135deg, #f4e4d4, #d2a679);
   padding: 20px 0;
@@ -83,6 +82,7 @@
   overflow: hidden;
   border-radius: 15px;
   border: 2px solid #d2a679;
+  cursor: pointer;
 }
 
 .floor-plan-image img {
@@ -126,6 +126,42 @@
   font-size: 1.1rem;
   margin: 8px 0 0;
   color: #f0e68c;
+}
+
+.click-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.floor-plan-image:hover .click-overlay {
+  opacity: 1;
+}
+
+.click-text {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background: rgba(210, 105, 30, 0.9);
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 .plan-navigation {
@@ -185,6 +221,195 @@
   margin-right: 10px;
 }
 
+/* Popup Styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  animation: fadeInOverlay 0.3s ease;
+}
+
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.popup-container {
+  background: white;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  animation: slideInPopup 0.4s ease;
+}
+
+@keyframes slideInPopup {
+  from { 
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to { 
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.popup-header {
+  background: linear-gradient(135deg, #d2691e, #a0522d);
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.popup-content {
+  padding: 30px;
+}
+
+.selected-plan-info {
+  text-align: center;
+  margin-bottom: 25px;
+  padding: 15px;
+  background: linear-gradient(135deg, #f4e4d4, #d2a679);
+  border-radius: 10px;
+}
+
+.selected-plan-info h4 {
+  margin: 0;
+  color: #8b4513;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-group input {
+  padding: 12px 15px;
+  border: 2px solid #d2a679;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #d2691e;
+  box-shadow: 0 0 0 3px rgba(210, 105, 30, 0.1);
+}
+
+.form-group input::placeholder {
+  color: #999;
+}
+
+.submit-button {
+  background: linear-gradient(45deg, #d2691e, #a0522d);
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button:hover:not(:disabled) {
+  background: linear-gradient(45deg, #a0522d, #8b4513);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.success-message {
+  background: linear-gradient(135deg, #4caf50, #45a049);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  animation: slideInMessage 0.3s ease;
+}
+
+.error-message {
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  animation: slideInMessage 0.3s ease;
+}
+
+@keyframes slideInMessage {
+  from { 
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to { 
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 @media (max-width: 768px) {
   .floor-plans-content {
     flex-direction: column;
@@ -213,6 +438,15 @@
   .floor-plans-container {
     padding: 25px;
   }
+
+  .popup-container {
+    width: 95%;
+    margin: 10px;
+  }
+
+  .popup-content {
+    padding: 20px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -238,5 +472,17 @@
 
   .plan-details p {
     font-size: 1rem;
+  }
+
+  .popup-header {
+    padding: 15px;
+  }
+
+  .popup-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .popup-content {
+    padding: 15px;
   }
 }

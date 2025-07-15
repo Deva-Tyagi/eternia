@@ -32,8 +32,8 @@ function App() {
                 <LocationSection />
                 <FloorPlans />
                 <GallerySection />
-                {/* <ContactForm />
-                <Footer /> */}
+                <ContactForm />
+                <Footer />
               </div>
             </>
           }

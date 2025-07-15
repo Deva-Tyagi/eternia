@@ -51,19 +51,19 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="contact-container">
-      <div className="contact-content">
-        <header className="contact-header">
-          <h1 className="contact-title">CONTACT US</h1>
-          <h2 className="contact-subtitle">
+    <div className="cf-contact-container">
+      <div className="cf-contact-content">
+        <header className="cf-contact-header">
+          <h1 className="cf-contact-title">CONTACT US</h1>
+          <h2 className="cf-contact-subtitle">
             READY TO BLOOM INTO A<br />
             BETTER LIFE?
           </h2>
         </header>
 
-        <div className="contact-form">
-          <div className="form-row">
-            <div className="form-group">
+        <div className="cf-contact-form">
+          <div className="cf-form-row">
+            <div className="cf-form-group">
               <input
                 type="text"
                 name="name"
@@ -71,10 +71,10 @@ const ContactForm = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="form-input"
+                className="cf-form-input"
               />
             </div>
-            <div className="form-group">
+            <div className="cf-form-group">
               <input
                 type="email"
                 name="email"
@@ -82,10 +82,10 @@ const ContactForm = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="form-input"
+                className="cf-form-input"
               />
             </div>
-            <div className="form-group">
+            <div className="cf-form-group">
               <input
                 type="tel"
                 name="phone"
@@ -93,27 +93,27 @@ const ContactForm = () => {
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="form-input"
+                className="cf-form-input"
               />
             </div>
           </div>
 
-          <div className="form-group message-group">
+          <div className="cf-form-group cf-message-group">
             <textarea
               name="message"
               placeholder="MESSAGE"
               value={formData.message}
               onChange={handleChange}
               required
-              className="form-textarea"
+              className="cf-form-textarea"
               rows="5"
             />
           </div>
 
-          <div className="submit-container">
+          <div className="cf-submit-container">
             <button
               onClick={handleSubmit}
-              className="submit-button"
+              className="cf-submit-button"
               disabled={isSubmitting}
             >
               {isSubmitting ? 'SENDING...' : 'SUBMIT NOW'}
@@ -121,26 +121,26 @@ const ContactForm = () => {
           </div>
 
           {submitStatus === 'success' && (
-            <div className="status-message success">
+            <div className="cf-status-message cf-success">
               Thank you! Your message has been sent successfully.
             </div>
           )}
 
           {submitStatus === 'error' && (
-            <div className="status-message error">
+            <div className="cf-status-message cf-error">
               Sorry, there was an error sending your message. Please try again.
             </div>
           )}
         </div>
 
-        <footer className="contact-footer">
-          <div className="footer-item">
-            <span className="footer-icon">📞</span>
-            <span className="footer-text">Call: +91-9278-883-232</span>
+        <footer className="cf-contact-footer">
+          <div className="cf-footer-item">
+            <span className="cf-footer-icon">📞</span>
+            <span className="cf-footer-text">Call: +91-9278-883-232</span>
           </div>
-          <div className="footer-item">
-            <span className="footer-icon">📍</span>
-            <span className="footer-text">Tech Zone IV, Greater Noida (W)</span>
+          <div className="cf-footer-item">
+            <span className="cf-footer-icon">📍</span>
+            <span className="cf-footer-text">Tech Zone IV, Greater Noida (W)</span>
           </div>
         </footer>
       </div>

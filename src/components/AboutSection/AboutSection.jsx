@@ -139,15 +139,6 @@ const AboutSection = () => {
             <div className="stat-label">AMENITIES</div>
           </div>
         </div>
-
-        {/* Decorative Quote */}
-        {/* <div className={`quote-section ${isVisible ? 'animate-in' : ''}`}>
-          <div className="quote-mark">"</div>
-          <p className="quote-text">
-            Where beauty meets function and space meets soul
-          </p>
-          <div className="quote-author">— Eternia Philosophy</div>
-        </div> */}
       </div>
 
       {/* Particle Effects */}

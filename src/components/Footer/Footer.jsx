@@ -17,7 +17,6 @@ const Footer = () => {
     message: ''
   });
 
-  // EmailJS configuration - Replace with your actual values
   const EMAILJS_SERVICE_ID = 'your_service_id';
   const EMAILJS_TEMPLATE_ID = 'your_template_id';
   const EMAILJS_PUBLIC_KEY = 'your_public_key';
@@ -35,17 +34,15 @@ const Footer = () => {
     setIsSubmitting(true);
 
     try {
-      // EmailJS template parameters
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
         phone: formData.phone,
         message: formData.message,
-        to_name: 'Support Team', // You can customize this
+        to_name: 'Support Team', 
         reply_to: formData.email
       };
 
-      // Send email using EmailJS
       const result = await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
@@ -55,10 +52,8 @@ const Footer = () => {
 
       console.log('Email sent successfully:', result.text);
       
-      // Show success message
       alert('Thank you for your enquiry! We will get back to you soon.');
       
-      // Close popup and reset form
       setIsPopupOpen(false);
       setFormData({
         name: '',
@@ -92,15 +87,7 @@ const Footer = () => {
             <div className="company-header">
               <div className="company-logo-container">
                 <img src={gvr} alt="Great Value Realty Logo" className="company-logo-image" />
-                {/* <div className="company-logo-fallback">
-                  <div className="logo-icon gvr-logo">
-                    <span className="tree-icon">🌳</span>
-                  </div>
-                  <div className="logo-text">
-                    <h3>Great Value</h3>
-                    <p>Realty</p>
-                  </div>
-                </div> */}
+                
               </div>
             </div>
             <div className="company-description">
@@ -112,15 +99,6 @@ const Footer = () => {
             <div className="company-header">
               <div className="company-logo-container">
                 <img src={yfo} alt="Yatharth Family Office Logo" className="company-logo-image" />
-                {/* <div className="company-logo-fallback">
-                  <div className="logo-icon yfo-logo">
-                    <span className="medical-icon">⚕️</span>
-                  </div>
-                  <div className="logo-text">
-                    <h3>YATHARTH</h3>
-                    <p>FAMILY OFFICE</p>
-                  </div>
-                </div> */}
               </div>
             </div>
             <div className="company-description">
@@ -219,7 +197,7 @@ const Footer = () => {
                 />
               </div>
               
-              <div className="form-group">
+              {/* <div className="form-group">
                 <label htmlFor="message">Message</label>
                 <textarea
                   id="message"
@@ -229,7 +207,7 @@ const Footer = () => {
                   rows="4"
                   placeholder="Tell us about your requirements..."
                 ></textarea>
-              </div>
+              </div> */}
               
               <div className="form-buttons">
                 <button type="button" className="cancel-btn" onClick={closePopup}>
