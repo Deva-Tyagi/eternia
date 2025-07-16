@@ -26,17 +26,16 @@ const ContactForm = () => {
     setSubmitStatus(null);
 
     try {
-      // Replace these with your actual EmailJS service ID, template ID, and user ID
       const result = await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        'service_zxqs4vh', 
+        'template_ncabbum', 
         {
           from_name: formData.name,
           from_email: formData.email,
           phone: formData.phone,
           message: formData.message,
         },
-        'YOUR_USER_ID' // Replace with your EmailJS user ID
+        'FPyANi4X-1gUfsMCI' 
       );
 
       console.log('Email sent successfully:', result.text);

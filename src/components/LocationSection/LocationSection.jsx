@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MapPin, Navigation, Building, Trees, Train, Car, School, Hospital, X } from 'lucide-react';
+import emailjs from '@emailjs/browser'; // Import EmailJS properly
 import './LocationSection.css';
 
 const LocationSection = () => {
@@ -8,32 +9,15 @@ const LocationSection = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    mobile: ''
+    phone: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
 
   // Initialize EmailJS when component mounts
   useEffect(() => {
-    // Load EmailJS script dynamically
-    const script = document.createElement('script');
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/emailjs/3.2.0/email.min.js';
-    script.async = true;
-    script.onload = () => {
-      // Initialize EmailJS with your public key
-      // Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
-      if (window.emailjs) {
-        window.emailjs.init('YOUR_PUBLIC_KEY');
-      }
-    };
-    document.head.appendChild(script);
-
-    return () => {
-      // Cleanup: remove script when component unmounts
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
-      }
-    };
+    // Initialize EmailJS with your public key
+    emailjs.init('FPyANi4X-1gUfsMCI');
   }, []);
 
   const features = [
@@ -81,7 +65,7 @@ const LocationSection = () => {
 
   const handleFormClose = () => {
     setShowForm(false);
-    setFormData({ name: '', email: '', mobile: '' });
+    setFormData({ name: '', email: '', phone: '' });
     setSubmitStatus('');
   };
 
@@ -97,7 +81,14 @@ const LocationSection = () => {
     e.preventDefault();
     
     // Validate form
-    if (!formData.name || !formData.email || !formData.mobile) {
+    if (!formData.name.trim() || !formData.email.trim() || !formData.phone.trim()) {
+      setSubmitStatus('error');
+      return;
+    }
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
       setSubmitStatus('error');
       return;
     }
@@ -106,25 +97,22 @@ const LocationSection = () => {
     setSubmitStatus('');
 
     try {
-      // Check if EmailJS is loaded
-      if (!window.emailjs) {
-        throw new Error('EmailJS not loaded');
-      }
-
       const templateParams = {
         to_name: 'Admin',
         from_name: formData.name,
         from_email: formData.email,
-        mobile: formData.mobile,
+        phone: formData.phone,
         message: 'User requested location details'
       };
 
-      const response = await window.emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+      const response = await emailjs.send(
+        'service_zxqs4vh', // Your EmailJS service ID
+        'template_ncabbum', // Your EmailJS template ID
         templateParams,
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+        'FPyANi4X-1gUfsMCI' // Your EmailJS public key
       );
+
+      console.log('EmailJS Response:', response);
 
       if (response.status === 200) {
         setSubmitStatus('success');
@@ -258,9 +246,9 @@ const LocationSection = () => {
                 <label className="ls-form-label">Mobile Number *</label>
                 <input
                   type="tel"
-                  name="mobile"
+                  name="phone"
                   className="ls-form-input"
-                  value={formData.mobile}
+                  value={formData.phone}
                   onChange={handleInputChange}
                   required
                   placeholder="Enter your mobile number"
@@ -280,7 +268,7 @@ const LocationSection = () => {
               <div className={`ls-form-status ${submitStatus}`}>
                 {submitStatus === 'success' 
                   ? 'Thank you! We will send you the location details shortly.' 
-                  : 'Something went wrong. Please try again.'}
+                  : 'Something went wrong. Please try again or check your input.'}
               </div>
             )}
           </div>

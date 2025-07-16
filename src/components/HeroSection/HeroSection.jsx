@@ -10,38 +10,33 @@ const HeroSection = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    mobile: '',
+    phone: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
 
-  // Auto-popup effect - Fixed timing issue
   useEffect(() => {
     let timer;
     
     const startTimer = () => {
       timer = setTimeout(() => {
-        // Only show auto-popup if no other form is currently open
         if (!showForm) {
           setShowAutoPopup(true);
         } else {
-          // If another form is open, restart the timer
           startTimer();
         }
-      }, 10000); // 10 seconds
+      }, 10000);
     };
 
-    // Start the initial timer
     startTimer();
 
-    // Cleanup function
     return () => {
       if (timer) {
         clearTimeout(timer);
       }
     };
-  }, [showForm]); // Added showForm as dependency
+  }, [showForm]);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -56,19 +51,19 @@ const HeroSection = () => {
     
     try {
       await emailjs.send(
-        'your_service_id', 
-        'your_template_id',
+        'service_zxqs4vh', 
+        'template_ncabbum',
         {
           from_name: formData.name,
           from_email: formData.email,
-          mobile: formData.mobile,
+          phone: formData.phone,
           message: formData.message,
         },
-        'your_public_key'
+        'FPyANi4X-1gUfsMCI'
       );
       
       setSubmitStatus('success');
-      setFormData({ name: '', email: '', mobile: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', message: '' });
       setTimeout(() => {
         setShowForm(false);
         setShowAutoPopup(false);
@@ -85,13 +80,11 @@ const HeroSection = () => {
     setShowForm(false);
     setShowAutoPopup(false);
     
-    // Start a new timer for the next popup after closing
     setTimeout(() => {
-      // Only show auto-popup if no other form is currently open
       if (!showForm) {
         setShowAutoPopup(true);
       }
-    }, 10000); // 10 seconds after closing
+    }, 10000); 
   };
 
   const phoneNumber = "+919911356262";
@@ -246,9 +239,9 @@ const HeroSection = () => {
               <div className="eternia-form-group">
                 <input
                   type="tel"
-                  name="mobile"
+                  name="phone"
                   placeholder="Mobile Number"
-                  value={formData.mobile}
+                  value={formData.phone}
                   onChange={handleInputChange}
                   required
                 />
@@ -318,9 +311,9 @@ const HeroSection = () => {
                 <div className="eternia-form-group">
                   <input
                     type="tel"
-                    name="mobile"
+                    name="phone"
                     placeholder="Mobile Number"
-                    value={formData.mobile}
+                    value={formData.phone}
                     onChange={handleInputChange}
                     required
                   />

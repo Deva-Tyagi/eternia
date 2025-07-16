@@ -9,7 +9,7 @@ const FloorPlans = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    mobile: ''
+    phone: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
@@ -31,7 +31,7 @@ const FloorPlans = () => {
 
   const handleClosePopup = () => {
     setShowPopup(false);
-    setFormData({ name: '', email: '', mobile: '' });
+    setFormData({ name: '', email: '', phone: '' });
     setSubmitStatus('');
   };
 
@@ -51,17 +51,17 @@ const FloorPlans = () => {
     const templateParams = {
       from_name: formData.name,
       from_email: formData.email,
-      mobile: formData.mobile,
+      phone: formData.phone,
       floor_plan: plans[activePlan].name,
       message: `Floor Plan Inquiry for ${plans[activePlan].name}`
     };
 
     try {
       await emailjs.send(
-        'YOUR_SERVICE_ID', 
-        'YOUR_TEMPLATE_ID', 
+        'service_zxqs4vh', 
+        'template_ncabbum', 
         templateParams,
-        'YOUR_PUBLIC_KEY' 
+        'FPyANi4X-1gUfsMCI' 
       );
       
       setSubmitStatus('success');
@@ -152,8 +152,8 @@ const FloorPlans = () => {
                 <div className="form-row">
                   <input
                     type="tel"
-                    name="mobile"
-                    value={formData.mobile}
+                    name="phone"
+                    value={formData.phone}
                     onChange={handleInputChange}
                     required
                     placeholder="📱 Mobile Number"

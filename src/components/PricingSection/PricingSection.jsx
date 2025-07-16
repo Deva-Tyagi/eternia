@@ -8,7 +8,7 @@ const PricingSection = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    mobile: '',
+    phone: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -46,7 +46,7 @@ const PricingSection = () => {
     setFormData({
       name: '',
       email: '',
-      mobile: '',
+      phone: '',
       message: `I'm interested in the ${plan.type} - ${plan.area} unit priced at ${plan.price}.`
     });
   };
@@ -62,22 +62,22 @@ const PricingSection = () => {
     
     try {
       await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        'service_zxqs4vh',
+        'template_ncabbum',
         {
           from_name: formData.name,
           from_email: formData.email,
-          phone: formData.mobile,
+          phone: formData.phone,
           message: formData.message,
           selected_plan: `${selectedPlan.type} - ${selectedPlan.area}`,
           plan_price: selectedPlan.price
         },
-        'YOUR_PUBLIC_KEY'
+        'FPyANi4X-1gUfsMCI'
       );
       
       alert('Thank you for your interest! We will contact you soon.');
       setShowForm(false);
-      setFormData({ name: '', email: '', mobile: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', message: '' });
     } catch (error) {
       alert('There was an error submitting your request. Please try again.');
     } finally {
@@ -175,9 +175,9 @@ const PricingSection = () => {
                 <div className="input-group">
                   <input
                     type="tel"
-                    name="mobile"
+                    name="phone"
                     placeholder="Your Mobile *"
-                    value={formData.mobile}
+                    value={formData.phone}
                     onChange={handleInputChange}
                     required
                     maxLength="10"

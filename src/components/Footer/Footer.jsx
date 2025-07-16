@@ -17,9 +17,9 @@ const Footer = () => {
     message: ''
   });
 
-  const EMAILJS_SERVICE_ID = 'your_service_id';
-  const EMAILJS_TEMPLATE_ID = 'your_template_id';
-  const EMAILJS_PUBLIC_KEY = 'your_public_key';
+  const EMAILJS_SERVICE_ID = 'service_zxqs4vh';
+  const EMAILJS_TEMPLATE_ID = 'template_ncabbum';
+  const EMAILJS_PUBLIC_KEY = 'FPyANi4X-1gUfsMCI';
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
