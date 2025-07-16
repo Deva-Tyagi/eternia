@@ -16,14 +16,32 @@ const HeroSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
 
-  // Auto-popup effect
+  // Auto-popup effect - Fixed timing issue
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowAutoPopup(true);
-    }, 6000); 
+    let timer;
+    
+    const startTimer = () => {
+      timer = setTimeout(() => {
+        // Only show auto-popup if no other form is currently open
+        if (!showForm) {
+          setShowAutoPopup(true);
+        } else {
+          // If another form is open, restart the timer
+          startTimer();
+        }
+      }, 10000); // 10 seconds
+    };
 
-    return () => clearTimeout(timer);
-  }, []);
+    // Start the initial timer
+    startTimer();
+
+    // Cleanup function
+    return () => {
+      if (timer) {
+        clearTimeout(timer);
+      }
+    };
+  }, [showForm]); // Added showForm as dependency
 
   const handleInputChange = (e) => {
     setFormData({
@@ -66,9 +84,17 @@ const HeroSection = () => {
   const closePopup = () => {
     setShowForm(false);
     setShowAutoPopup(false);
+    
+    // Start a new timer for the next popup after closing
+    setTimeout(() => {
+      // Only show auto-popup if no other form is currently open
+      if (!showForm) {
+        setShowAutoPopup(true);
+      }
+    }, 10000); // 10 seconds after closing
   };
 
-  const phoneNumber = "+919278883232";
+  const phoneNumber = "+919911356262";
 
   return (
     <div className="eternia-hero">
@@ -227,16 +253,6 @@ const HeroSection = () => {
                   required
                 />
               </div>
-              
-              {/* <div className="eternia-form-group">
-                <textarea
-                  name="message"
-                  placeholder="Your Message (Optional)"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  rows="3"
-                ></textarea>
-              </div> */}
               
               <button 
                 type="submit"

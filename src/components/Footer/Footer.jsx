@@ -109,7 +109,7 @@ const Footer = () => {
         
         <div className="footer-bottom">
           <div className="copyright-section">
-            <p className="copyright">© COPYRIGHT 2025 NBCC ASPIRE ETERNIA. ALL RIGHT RESERVED.</p>
+            <p className="copyright">© 2025 RKRM REAL ESTATE LLP. ALL RIGHTS RESERVED.</p>
             <div className="footer-links">
               <Link to="/disclaimer" className="footer-link">
                  DISCLAIMER & PRIVACY POLICY
@@ -121,21 +121,21 @@ const Footer = () => {
           
           <div className="nbcc-aspire-section">
             <div className="nbcc-aspire-logos">
-              <div className="nbcc-logo">
+              {/* <div className="nbcc-logo">
                 <div className="logo-container">
                   <img src={nbcc} alt="NBCC Logo" className="logo-image" />
                   <span className="logo-fallback">NBCC</span>
                 </div>
-              </div>
-              <div className="aspire-logo">
+              </div> */}
+              {/* <div className="aspire-logo">
                 <div className="logo-container">
                   <img src={aspire} alt="Aspire Logo" className="logo-image" />
                   <span className="logo-fallback">ASPIRE</span>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="disclaimer-text">
-              <p>Disclaimer: Authorised marketing partner for Aspire Dream Valley III, managed by NBCC on behalf of the Hon'ble Supreme Court-appointed Court Receiver. | *T&C Apply</p>
+              <p>Disclaimer: This is not the official website of Great Value Eternia. It is owned and managed by RKRM Real Estate LLP, a RERA-registered channel partner (RERA No: UPRERAAGT25838) for informational and marketing purposes only.| *T&C Apply</p>
             </div>
           </div>
           
@@ -196,18 +196,6 @@ const Footer = () => {
                   placeholder="Enter your phone number"
                 />
               </div>
-              
-              {/* <div className="form-group">
-                <label htmlFor="message">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  rows="4"
-                  placeholder="Tell us about your requirements..."
-                ></textarea>
-              </div> */}
               
               <div className="form-buttons">
                 <button type="button" className="cancel-btn" onClick={closePopup}>

@@ -136,7 +136,7 @@ const ContactForm = () => {
         <footer className="cf-contact-footer">
           <div className="cf-footer-item">
             <span className="cf-footer-icon">📞</span>
-            <span className="cf-footer-text">Call: +91-9278-883-232</span>
+            <span className="cf-footer-text">Call: +91-9911-356-262</span>
           </div>
           <div className="cf-footer-item">
             <span className="cf-footer-icon">📍</span>

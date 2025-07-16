@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Shield, AlertTriangle, Lock, Info } from 'lucide-react';
+import { ChevronDown, AlertTriangle, Lock, Shield } from 'lucide-react';
 import './Disclaimer.css';
 
 const Disclaimer = () => {
@@ -17,11 +17,10 @@ const Disclaimer = () => {
       </div>
 
       <div className="dc-sections-grid">
+
+        {/* Disclaimer Section */}
         <div className="dc-section-card">
-          <div 
-            className="dc-section-header"
-            onClick={() => toggleSection('disclaimer')}
-          >
+          <div className="dc-section-header" onClick={() => toggleSection('disclaimer')}>
             <div className="dc-section-title">
               <AlertTriangle className="dc-section-icon" />
               <span>Disclaimer</span>
@@ -30,34 +29,23 @@ const Disclaimer = () => {
           </div>
           <div className={`dc-section-content ${expandedSection === 'disclaimer' ? 'dc-expanded' : ''}`}>
             <p className="dc-content-text">
-              This website is only for the purpose of providing <span className="dc-highlight">information regarding real estate projects</span> in different regions. By accessing this website, the viewer confirms that the information including brochures and marketing collaterals on this website is solely for informational purposes and the viewer has not relied on this information for making any booking/purchase in any project of the company.
+              At INSTADEAL, we respect your privacy and the confidentiality of the information you submit on our portal. We are committed to protecting the privacy of users’ personal information collected on our platform. We do not sell, trade, or rent your personal information to others. Information collected on our website is kept strictly confidential. We use the collected information to enhance your satisfaction by designing services tailored to your needs.
             </p>
-            
-            <div className="dc-warning-box">
-              <AlertTriangle className="dc-warning-icon" size={20} />
-              <div>
-                <strong>Important:</strong> Nothing on this website constitutes advertising, marketing, booking, selling or an offer for sale, or invitation to purchase a unit in any project by the company. The company is not liable for any consequence of any action taken by the viewer relying on such material/ information on this website.
-              </div>
-            </div>
-
             <p className="dc-content-text">
-              Please also note that the company has <span className="dc-highlight">not verified the information and the compliances</span> of the projects. Further, the company has not checked the RERA (Real Estate Regulation Act 2016) registration status of the real estate projects listed herein. The company does not make any representation in regards to the compliances done against these projects. You should make yourself aware about the RERA registration status of the listed real estate projects before purchasing property.
+              By using our website, you consent to the collection and use of this information. This policy applies solely to information collected by INSTADEAL and is part of our Terms and Conditions of Use. Personal Information stored in a user’s profile may be used, for example, to send invitation emails to people interested in joining the community.
             </p>
-
-            <div className="dc-info-box">
-              <Info className="dc-info-icon" size={20} />
-              <div>
-                <strong>Remember:</strong> This site is for information purpose only and should not be treated as the official website.
-              </div>
-            </div>
+            <p className="dc-content-text">
+              We collect information from you when you register on our site or fill out a form. You may be asked to enter your name, email, mailing address, or phone number. We may also collect your computer’s IP address, IP address location, and browser/device information. However, you may visit our site anonymously.
+            </p>
+            <p className="dc-content-text">
+              Although INSTADEAL allows privacy settings, no security measures are perfect or impenetrable. INSTADEAL only shares user information with others when we have the user’s permission or as required by law or for legal proceedings, fraud prevention, or security concerns.
+            </p>
           </div>
         </div>
 
+        {/* Privacy Policy Section */}
         <div className="dc-section-card">
-          <div 
-            className="dc-section-header"
-            onClick={() => toggleSection('privacy')}
-          >
+          <div className="dc-section-header" onClick={() => toggleSection('privacy')}>
             <div className="dc-section-title">
               <Shield className="dc-section-icon" />
               <span>Privacy Policy</span>
@@ -66,26 +54,32 @@ const Disclaimer = () => {
           </div>
           <div className={`dc-section-content ${expandedSection === 'privacy' ? 'dc-expanded' : ''}`}>
             <p className="dc-content-text">
-              In our endeavor and commitment of <span className="dc-highlight">protecting your personal information</span>, we have designed this comprehensive privacy policy. This is to keep your interests and information safe on our website.
+              This privacy policy explains how INSTADEAL collects, uses, and protects your information. By using our website and submitting your information, you agree to this policy.
             </p>
-
-            <h4 className="dc-content-heading">Updation of privacy policy</h4>
             <p className="dc-content-text">
-              This privacy policy is subject to undergo change and review without any prior notice or approval. So to keep yourself updated on the changes introduced, please keep visiting and reviewing the terms and conditions of this privacy policy.
+              We may collect your name, email address, mailing address, phone number, IP address, browser/device information, and any content submitted through forms. We do not sell or rent this data. Your information is used only to provide services, respond to inquiries, and improve the platform.
             </p>
-
-            <h4 className="dc-content-heading">User information</h4>
             <p className="dc-content-text">
-              By using our website, you agree to abide by the rules laid out by us and consent to collection and use of all such information that you may furnish to, or through, our website. In some cases, while you visit our website, you may not need to provide any personal information. But in certain instances, we must have your personal information in order for us to grant you access to some of the links or sites. Such links/ pages may ask for your name, e-mail address, phone number etc. The information furnished by you is used to provide relevant products and services and to acknowledge receipt of your communication or to send out information and updates to you. You have option of requesting removal from our mailing list. We do not give away your personal information to any third party.
+              We may track your usage such as domain, pages visited, referring sites, and time spent. This helps improve performance and customize services. Trusted third-party tools (e.g., analytics or marketing) may assist us if they maintain strict confidentiality.
+            </p>
+            <p className="dc-content-text">
+              Cookies: a) Cookies are stored on your browser/device and may be used for session management, performance monitoring, and personalization. b) You can decline cookies, but this may limit site functionality.
+            </p>
+            <p className="dc-content-text">
+              Third-party links or ads may appear on our website. We are not responsible for their content or privacy practices.
+            </p>
+            <p className="dc-content-text">
+              User consent is required for all data usage. By continuing to use the website, you consent to our terms. You can opt out of communication or request data deletion.
+            </p>
+            <p className="dc-content-text">
+              Governing Law: These terms are governed by Indian law, and any disputes shall be subject to the jurisdiction of courts in Noida, Uttar Pradesh. For concerns, email us at <a href="mailto:legal@instadeal.in">legal@instadeal.in</a>.
             </p>
           </div>
         </div>
 
+        {/* Security Section */}
         <div className="dc-section-card">
-          <div 
-            className="dc-section-header"
-            onClick={() => toggleSection('security')}
-          >
+          <div className="dc-section-header" onClick={() => toggleSection('security')}>
             <div className="dc-section-title">
               <Lock className="dc-section-icon" />
               <span>Security</span>
@@ -94,30 +88,25 @@ const Disclaimer = () => {
           </div>
           <div className={`dc-section-content ${expandedSection === 'security' ? 'dc-expanded' : ''}`}>
             <p className="dc-content-text">
-              To ensure security while transferring sensitive information, all the ongoing transmissions between client and server are <span className="dc-highlight">encrypted using advanced and standard protocols</span>. We also practice restricted access by employees and hold them to high levels of confidentiality.
+              INSTADEAL implements secure transmission protocols to protect sensitive information. All communication is encrypted using industry standards.
             </p>
-
-            <h4 className="dc-content-heading">Use of cookies</h4>
             <p className="dc-content-text">
-              We may use cookies for security, session continuity, and customization purposes. In case of a user opting to reject a cookie, he/ she may not be able to gain access to some of the limited services or use some features of the site.
+              Access to personal information is limited to employees or service providers who need it for delivering services and are bound by confidentiality agreements.
             </p>
-
-            <div className="dc-warning-box">
-              <AlertTriangle className="dc-warning-icon" size={20} />
-              <div>
-                <strong>Contact Us:</strong> In case of any queries or suggestions regarding privacy statement or your dealings with this web site, please contact.
-              </div>
-            </div>
+            <p className="dc-content-text">
+              We use cookies for session continuity, analytics, and personalization. You can decline cookies but may experience limited functionality.
+            </p>
+            <p className="dc-content-text">
+              In case of any legal requirements, fraud investigation, or safety enforcement, user data may be accessed or shared as needed with law enforcement.
+            </p>
           </div>
         </div>
+
       </div>
 
       <div className="dc-footer">
         <h3>Questions or Concerns?</h3>
-        <p>
-          We're here to help! If you have any questions about our policies or how we handle your information, 
-          please don't hesitate to reach out to our support team.
-        </p>
+        <p>If you have questions about how we handle your data or this policy, contact us at <a href="mailto:legal@instadeal.in">legal@instadeal.in</a>.</p>
         <div className="dc-badge">
           <Shield size={16} />
           <span>Your Privacy is Protected</span>

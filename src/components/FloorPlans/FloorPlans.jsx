@@ -109,67 +109,84 @@ const FloorPlans = () => {
 
       {showPopup && (
         <div className="popup-overlay">
-          <div className="popup-container">
-            <div className="popup-header">
-              <h3 style={{color:'#d2691e'}}>Get Floor Plan Details</h3>
-              <button className="close-button" onClick={handleClosePopup} style={{color:'#d2691e'}}>×</button>
+          <div className="popup-container-redesigned">
+            <div className="popup-header-redesigned">
+              <div className="popup-icon">📋</div>
+              <h3>Get Floor Plan Details</h3>
+              <button className="close-button-redesigned" onClick={handleClosePopup}>
+                ✕
+              </button>
             </div>
-            <div className="popup-content">
-              <div className="selected-plan-info">
-                <h4>Selected Plan: {plans[activePlan].name}</h4>
+            
+            <div className="popup-content-redesigned">
+              <div className="selected-plan-badge">
+                <span className="plan-emoji">🏠</span>
+                <span className="plan-name">{plans[activePlan].name}</span>
               </div>
-              <form onSubmit={handleSubmit} className="popup-form">
-                <div className="form-group">
-                  <label htmlFor="name" style={{color:'black'}}>Full Name *</label>
+              
+              <form onSubmit={handleSubmit} className="popup-form-redesigned">
+                <div className="form-row">
                   <input
                     type="text"
-                    id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    placeholder="Enter your full name"
+                    placeholder="👤 Full Name"
+                    className="form-input-redesigned"
                   />
                 </div>
-                <div className="form-group">
-                  <label htmlFor="email" style={{color:'black'}}>Email Address *</label>
+                
+                <div className="form-row">
                   <input
                     type="email"
-                    id="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    placeholder="Enter your email address"
+                    placeholder="📧 Email Address"
+                    className="form-input-redesigned"
                   />
                 </div>
-                <div className="form-group">
-                  <label htmlFor="mobile" style={{color:'black'}}>Mobile Number *</label>
+                
+                <div className="form-row">
                   <input
                     type="tel"
-                    id="mobile"
                     name="mobile"
                     value={formData.mobile}
                     onChange={handleInputChange}
                     required
-                    placeholder="Enter your mobile number"
+                    placeholder="📱 Mobile Number"
+                    className="form-input-redesigned"
                   />
                 </div>
+                
                 <button 
                   type="submit" 
-                  className="submit-button"
+                  className="submit-button-redesigned"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Sending...' : 'Get Floor Plan Details'}
+                  {isSubmitting ? (
+                    <>
+                      <span className="spinner"></span>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <span>📩</span>
+                      Get Details
+                    </>
+                  )}
                 </button>
+                
                 {submitStatus === 'success' && (
-                  <div className="success-message">
-                    Thank you! We'll send you the floor plan details shortly.
+                  <div className="message-redesigned success-redesigned">
+                    ✅ Thank you! We'll send details shortly.
                   </div>
                 )}
                 {submitStatus === 'error' && (
-                  <div className="error-message">
-                    Sorry, there was an error sending your request. Please try again.
+                  <div className="message-redesigned error-redesigned">
+                    ❌ Error occurred. Please try again.
                   </div>
                 )}
               </form>
